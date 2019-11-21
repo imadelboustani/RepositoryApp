@@ -9,11 +9,11 @@ import {Repository} from '../shared/repository.model';
 export class RepositoryDataService {
    repositories: Repository[] = [];
   constructor(private http: HttpClient) { }
-  getRepositoriesData(): Observable<Object> {
-  return this.http.get('https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc');
+  getRepositoriesData(): Observable<any> {
+   return this.http.get('https://api.github.com/search/repositories?q=created:>' + this.getCurrentDate() + '&sort=stars&order=desc');
   }
   getRepositoriesArray(): Repository[] {
-    this.getRepositoriesData().subscribe((resp) => {
+    this.getRepositoriesData().subscribe((resp: any) => {
       for (const elem of resp.items) {
         this.repositories.push(new Repository( elem.name, elem.description,
           elem.owner.login, elem.owner.avatar_url,
@@ -21,5 +21,13 @@ export class RepositoryDataService {
       }
     });
     return this.repositories;
+  }
+  getCurrentDate(): string {
+    const date = new Date();
+    date.setDate(date.getDate() - 30);
+    const day =  String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const dateUrl = date.getFullYear() + '-' + month + '-' + day;
+    return dateUrl;
   }
 }

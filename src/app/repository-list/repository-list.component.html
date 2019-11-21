@@ -1,1 +1,6 @@
-<app-repository-element> </app-repository-element>
+
+<div class="row">
+  <div class="col-xs-12">
+    <app-repository-element *ngFor="let repos of repositories" [repository]="repos"> </app-repository-element>
+  </div>
+</div>

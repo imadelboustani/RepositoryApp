@@ -1,1 +1,32 @@
-<p>repository-element works!</p>
+
+<div class="card mb-3 w-50 " >
+  <div class="row no-gutters">
+    <div class="col-4 p-4" >
+      <img [src]="repository.imagePath" class="card-img " alt="...">
+    </div>
+    <div class="col-8">
+      <div class="card-body ">
+        <h2 class="card-title text-primary mb-5">{{ repository.RepositoryName }}</h2>
+        <h3 class="card-text mb-5">  {{ repository.description}}</h3>
+        <h3 class="card-text " > <h1 class=" badge badge-primary  mr-3  "> Stars: {{ repository.stars}} </h1> <h1 class=" badge badge-danger mr-3 "> Issues: {{ repository.issues}} </h1> <small class="text-muted">Submited 30 days ago by {{ repository.userName}}</small></h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

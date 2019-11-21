@@ -12,8 +12,7 @@ export class RepositoryListComponent implements OnInit {
   constructor(private repositoryService: RepositoryDataService) { }
 
   ngOnInit() {
-   console.log(this.repositoryService.getRepositoriesData().subscribe(resp => console.log(resp)));
-   console.log(this.repositoryService.getRepositoriesArray());
+   this.repositories = this.repositoryService.getRepositoriesArray();
   }
 
 }
