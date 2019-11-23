@@ -1,32 +1,20 @@
 
-<div class="card mb-3 w-50 " >
-  <div class="row no-gutters">
-    <div class="col-4 p-4" >
-      <img [src]="repository.imagePath" class="card-img " alt="...">
-    </div>
-    <div class="col-8">
-      <div class="card-body ">
-        <h2 class="card-title text-primary mb-5">{{ repository.RepositoryName }}</h2>
-        <h3 class="card-text mb-5">  {{ repository.description}}</h3>
-        <h3 class="card-text " > <h1 class=" badge badge-primary  mr-3  "> Stars: {{ repository.stars}} </h1> <h1 class=" badge badge-danger mr-3 "> Issues: {{ repository.issues}} </h1> <small class="text-muted">Submited 30 days ago by {{ repository.userName}}</small></h3>
+<div class="card col-md-12" style = "margin-top: 15px;">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-3">
+        <img [src]="repository.imagePath" width="150px" height="150px" alt="avatar">
       </div>
-    </div>
-  </div>
+
+      <div class="col-md-9">
+        <h5 class="card-title"> {{repository.RepositoryName}}</h5>
+        <p class="card-text"> {{repository.description}}</p>
+        <a  class="btn btn-primary text-white" *ngIf="repository.stars >=1000" > Stars: {{ repository.stars/1000 | number: '1.1-1' }}K</a>
+        <a  class="btn btn-primary text-white" *ngIf="repository.stars < 1000"> Stars: {{ repository.stars }}</a>
+        <a  class="btn btn-danger text-white" style="margin-left: 5px; margin-right: 10px; width: 100px;" *ngIf="repository.issues >= 1000"> Issues {{repository.issues/1000 | number: '1.1-1' }}K</a>
+        <a  class="btn btn-danger text-white" style="margin-left: 5px; margin-right: 10px; width: 100px;" *ngIf="repository.issues<1000"> Issues {{repository.issues  }}</a>
+        Submited 30 days ago by {{ repository.userName}}
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
+</div>
+</div>
