@@ -27,6 +27,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
+To run The application, Run ng serve and navigate to `http://localhost:4200/` and then you will redirected Automatically to `http://localhost:4200/Repositories/1` 
+
 First Page
 ![github1](https://user-images.githubusercontent.com/38638726/69561256-5cdd7e80-0fad-11ea-9c72-040b9ab06bff.PNG)
  
