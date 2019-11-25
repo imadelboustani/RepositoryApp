@@ -1,1 +1,5 @@
-<app-repository-element> </app-repository-element>
+<div class="container">
+    <app-repository-element *ngFor="let repos of repositories" [repository]="repos"> </app-repository-element>
+  
+  <app-repository-pagination [currentPage]="page" (changePage)="onChangePage($event)"> </app-repository-pagination>
+</div>
